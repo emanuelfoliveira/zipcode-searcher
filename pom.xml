@@ -11,7 +11,7 @@
 	<groupId>br.com.efo</groupId>
 	<artifactId>zipcode-searcher</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>zipcode-searcher</name>
+	<name>Zip Code Searcher</name>
 	<description>REST to search Brazilian Zipcode</description>
 
 	<properties>
