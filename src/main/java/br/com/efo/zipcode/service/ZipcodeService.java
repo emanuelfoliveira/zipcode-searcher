@@ -7,6 +7,7 @@ import br.com.efo.zipcode.respository.ZipcodeRepository;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
@@ -15,6 +16,9 @@ public class ZipcodeService implements IZipcodeService {
 
     @Autowired
     private ZipcodeRepository repository;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Override
     public ZipcodeResponse searchZipcode(final String zipcode) {
@@ -25,6 +29,11 @@ public class ZipcodeService implements IZipcodeService {
         }
 
         return null;
+    }
+
+    private ZipcodeResponse searchZipcode(){
+        val responseEntity = restTemplate.getForEntity("", ZipcodeResponse.class);
+       return null;
     }
 
     private ZipcodeResponse buildResponse(final ZipcodeEntity entity) {
